@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { CallScreen } from './components/CallScreen';
 import { IdleScreen } from './components/IdleScreen';
+import { DrawingCanvas } from './components/DrawingCanvas';
 
 type CallStatus = 'idle' | 'calling' | 'in-progress';
 
@@ -19,6 +20,9 @@ function App() {
 
   const remoteRef = useRef<HTMLVideoElement>(null);
   const localRef = useRef<HTMLVideoElement>(null);
+
+  return <DrawingCanvas />
+
 
   /**
    * Create a new WebSocket connection to the server.
